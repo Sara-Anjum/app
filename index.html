@@ -1,0 +1,197 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, user-scalable=no"><link href="gk/lib/jquery.mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css"><!-- Export CSS  --><style>core-toolbar {color: #f1f1f1;fill: #f1f1f1;}paper-tabs {
+  background-color: #00bcd4;
+  color: #fff;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+}
+paper-tabs[noink][nobar] paper-tab.core-selected {
+  color: #ffff8d;
+}
+paper-tabs.transparent-teal {
+  background-color: transparent;
+  color: #00bcd4;
+  box-shadow: none;
+}
+paper-tabs.transparent-teal: : shadow #selectionBar {
+  background-color: #00bcd4;
+}
+paper-tabs.transparent-teal paper-tab: : shadow #ink {
+  color: #00bcd4;
+}
+.maps{
+  height: 20%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.map-title{
+  margin-bottom: 0px;border-top: 1px solid #E4E4E4;padding: 10px 10px 0px 5px;
+}
+.map-desctiption{
+padding: 10px 10px 0px 5px;
+}
+      </style>
+
+<script src='http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js'></script>
+<script src="ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="mobile/1.4.5/jqm.js"></script>
+<script src="api.js"></script>
+<script src="app.js"></script>
+
+<!-- Uncomment the following to include cordova in your android project --><!--<script src="http://jqmdesigner.appspot.com/platforms/android/cordova.js"></script>--><title>EZo App</title></head><body><!-- Page: home  -->
+
+
+<!-- Main Screen  -->
+<div id="home" data-role="page">
+  <div data-role="header" data-position="fixed">
+    <h3>Welcome to Re-live+</h3>
+  </div>
+  <div role="main" class="ui-content">
+    <div class="ui-field-contain">
+      <a class="ui-btn anchor-button ui-link" href="#signin" data-transition="slide" >Sign in</a>
+    </div>
+    <div class="ui-field-contain">
+      <a class="ui-btn anchor-button ui-link" href="#signup" data-transition="slide" >Sign up</a>
+    </div>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h3></h3>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h3></h3>
+  </div>
+</div>
+
+<!-- Sign in screen  -->
+<div id="signin" data-role="page">
+  <div data-role="header" data-position="fixed">
+    <h3>Sign Up</h3>
+    <a class="ui-btn ui-btn-left ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse" data-rel="back">Back</a>
+  </div>
+  <div role="main" class="ui-content">
+    <div class="ui-field-contain">
+      <label for="gk-326GbYv">E-mail</label>
+      <input type="text" name="" id="email-login">
+    </div>
+    <div class="ui-field-contain">
+      <label for="gk-326QENB">Password</label>
+      <input type="password" name="" id="password-login">
+    </div>
+    <div class="ui-grid-a" style="height:95px">
+      <div class="ui-block-a" style="height:100%">
+        <a class="ui-btn" data-rel="back" data-direction="reverse">Cancel</a>
+      </div>
+      <div class="ui-block-b" style="height:100%">
+        <a class="ui-btn" data-transition="slide" id="btn-signin">Sign in</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Sign up screen  -->
+<div id="signup" data-role="page">
+  <div data-role="header" data-position="fixed">
+    <h3>Sign Up</h3>
+    <a class="ui-btn ui-btn-left ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse" data-rel="back">Back</a>
+  </div>
+  <div role="main" class="ui-content">
+    <div class="ui-field-contain">
+      <label for="gk-326803q">First name</label>
+      <input type="text" name="" id="fname-signup">
+    </div>
+    <div class="ui-field-contain">
+      <label for="gk-326hnFR">Last name</label>
+      <input type="text" name="" id="lname-signup">
+    </div>
+    <div class="ui-field-contain">
+      <label for="gk-326GbYv">E-mail</label>
+      <input type="text" name="" id="email-signup">
+    </div>
+    <div class="ui-field-contain">
+      <label for="gk-326QENB">Password</label>
+      <input type="password" name="" id="password-signup">
+    </div>
+    <div class="ui-field-contain">
+      <label for="gk-326k3iC">Confirm password</label>
+      <input type="password" name="" id="password-confirm-signup">
+    </div>
+    <div class="ui-grid-a" style="height:95px">
+      <div class="ui-block-a" style="height:100%">
+        <a class="ui-btn" data-rel="back" data-direction="reverse">Cancel</a>
+      </div>
+      <div class="ui-block-b" style="height:100%">
+        <a class="ui-btn" data-transition="slide" id="btn-signup">Sign up</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Screen  -->
+<div id="main" data-role="page">
+  <div data-role="header" data-position="fixed">
+    <h3>Home</h3>
+    <a href="#right-panel" data-theme="d" data-icon="grid" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc"></a>
+    <a href="#create-meeting" data-theme="d" data-icon="plus" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc"  data-transition="slide"></a>
+  </div>
+  <div role="main" class="ui-content">
+    <a class="ui-btn">Invitations</a>
+    <a class="ui-btn" href="#list-meeting" data-transition="slide" >Meetings</a>
+  </div>
+
+  <div data-role="panel" id="right-panel" data-display="push" data-position="left" data-theme="c">
+      <ul data-role="listview">
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">Setting</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+  </div>
+</div>
+
+
+<!-- Meeting List  -->
+<div id="list-meeting" data-role="page">
+  <div data-role="header" data-position="fixed">
+    <h3>Meetings</h3>
+    <a class="ui-btn ui-btn-left ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse" href="#main">Back</a>
+  </div>
+  <div role="main" class="ui-content">
+    <!-- <ul data-role="listview" id="meeting-list">
+
+    </ul>-->
+    <div id="meeting-list" style="height: 100%;position: absolute;width: 100%;"></div>
+  </div>
+</div>
+
+<!-- Meeting Create  -->
+<div id="create-meeting" data-role="page">
+  <div data-role="header" data-position="fixed">
+    <h3>Create Meeting</h3>
+    <a class="ui-btn ui-btn-left ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse" data-rel="back">Back</a>
+  </div>
+  <div role="main" class="ui-content">
+    <div class="ui-field-contain">
+      <label for="gk-326GbYv">Title</label>
+      <input type="text" name="" id="title-create">
+    </div>
+    <div class="ui-field-contain">
+      <label for="gk-326QENB">Description</label>
+      <input type="text" name="" id="description-create">
+    </div>
+    <div class="ui-field-contain">
+      <label for="gk-326QENB">Vanue</label>
+      <input type="text" name="" id="venue-create">
+    </div>
+    <div class="ui-grid-a" style="height:95px">
+      <div class="ui-block-a" style="height:100%">
+        <a class="ui-btn" data-rel="back" data-direction="reverse">Cancel</a>
+      </div>
+      <div class="ui-block-b" style="height:100%">
+        <a class="ui-btn" data-transition="slide" id="btn-create">Create</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
